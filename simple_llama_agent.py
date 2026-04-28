@@ -70,17 +70,17 @@ for candidate, display_name, ctx_size in MODEL_CANDIDATES:
                 verbose=False
             )
             loaded_model_name = display_name
-            print("✓ Loaded successfully")
+            print(" Loaded successfully")
             break
         except Exception as e:
-            print(f"✗ Failed ({str(e)[:30]}...)")
+            print(f" Failed ({str(e)[:30]}...)")
             continue
 
 if not model:
     print("ERROR: Could not load any model")
     exit(1)
 
-print("✓ Main Agent ready")
+print(" Main Agent ready")
 print("  Simple Agent (Mistral) will load on-demand when needed")
 print("=" * 70)
 
@@ -167,10 +167,10 @@ def load_simple_agent():
             verbose=False
         )
         SIMPLE_AGENT_AVAILABLE = True
-        print("✓ Ready")
+        print(" Ready")
         return True
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f" Failed: {e}")
         return False
 
 
@@ -273,7 +273,7 @@ Agent:"""
 # ============================================================================
 
 def main():
-    print("\n📝 Multi-Agent System Ready! Type 'quit' to exit")
+    print("\n Multi-Agent System Ready! Type 'quit' to exit")
     print("=" * 70)
     print("CAPABILITIES:")
     print("  • Time Tool: 'What time is it?'")
@@ -291,7 +291,7 @@ def main():
                 continue
             
             if user_input.lower() in ["quit", "exit", "bye"]:
-                print("Agent: Goodbye! 👋")
+                print("Agent: Goodbye! ")
                 break
             
             # Add user input to memory
